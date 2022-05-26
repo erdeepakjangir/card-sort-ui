@@ -1,0 +1,36 @@
+.header h1{
+background-color: #BAF1F6;
+text-align: center;
+padding: 12px;
+}
+.right-section{
+  display: inline-grid;
+  width: 90%;
+}
+.left-section{
+  overflow-y: scroll;
+  height: 800px;
+  display: inline-flex;
+  width: 10%;
+}
+.card-list-section {
+  margin: 10px 20px;
+}
+
+.example-card {
+    max-width: 200px;
+    background-color: bisque;
+    margin: 0px 10px;
+  }
+  .card-dropdown{
+    display: inline-grid;
+    margin:0 10px;
+  }
+  .card-selected-area{
+    display: inline-flex;
+  }
+  .card-result{
+    display: block;
+  }
+  .card-basic{ font-size: 40px; font-weight: bold; color: red;}
+ 
