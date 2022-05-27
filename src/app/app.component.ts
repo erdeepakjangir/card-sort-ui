@@ -32,15 +32,12 @@ export class AppComponent implements OnInit {
   PerformSort(selectedCards: any) {
     this.selectedList = []
     selectedCards.forEach((item: any) => {
-      console.log(item);
       this.selectedList.push(item.value)
     });
 
     this.service.performSort(this.selectedList)
       .subscribe(response => {
         this.sortedList = response as string[];
-        console.log('after response');
-        console.log(this.sortedList);
       });
   }
 

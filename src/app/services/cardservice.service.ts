@@ -10,7 +10,6 @@ export class CardserviceService {
   constructor(private httpClient: HttpClient) { }
 
   getCardList() {
-    console.log(environment.baseURL);
     return this.httpClient.get(environment.baseURL + 'card');
   }
   performSort(data: any) {
