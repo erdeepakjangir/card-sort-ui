@@ -4,40 +4,35 @@
 <div class="main-section">
   <div class="left-section">
     <div class="card-dropdown">
-      <mat-selection-list #cards color="primary"
-        (selectionChange)="onListSelectionChange($event, cards.selectedOptions)">
+      <mat-selection-list #cards color="primary" (selectionChange)="onListSelectionChange(cards.selectedOptions)">
         <mat-list-option *ngFor="let card of cardList" [value]="card">{{card}}</mat-list-option>
       </mat-selection-list>
     </div>
   </div>
   <div class="right-section">
     <div class="card-list-section">
-      <h3> INPUT :</h3>
+      <h4><span class="highlight-text">Instructions : Selects card(s) from the left side selection list and click on
+          sort button to sort thr card(s).</span></h4>
+      <h3 class="header-lbl"> INPUT :</h3>
       <div class="card-selected-area">
-        <mat-card class="example-card" *ngFor="let item of cards.selectedOptions.selected">
-          <mat-card-content>
-            <div class="card-basic"> {{item.value}} </div>
-          </mat-card-content>
-          <!-- <mat-card-actions>
-            <button mat-button class="DELETE">DELETE</button>
-          </mat-card-actions> -->
-        </mat-card>
+        <div [class]="'card suit' +(item.value.substring(item.value.length-1,item.value.length))"
+          *ngFor="let item of cards.selectedOptions.selected">
+          <p>{{item.value.substring(0,item.value.length-1)}} </p>
+        </div>
       </div>
     </div>
     <div class="card-list-section" *ngIf="cards.selectedOptions.selected.length>0">
-      <!-- <button mat-raised-button color="warn"  (click)="ClearAll()">Clear All</button> -->
-      <button mat-raised-button color="primary" (click)="PerformSort(cards.selectedOptions.selected)">Sort</button>
+      <button mat-raised-button color="warn" (click)="ClearAll()">CLEAR ALL</button>
+      <button mat-raised-button color="primary" class="btn-sort"
+        (click)="PerformSort(cards.selectedOptions.selected)">SORT CARD</button>
     </div>
     <mat-divider></mat-divider>
     <div class="card-list-section">
       <h3> OUTPUT :</h3>
       <div class="card-selected-area">
-        <mat-card class="example-card" *ngFor="let item of sortedList">
-          <mat-card-content>
-            <div class="card-basic"> {{item}} </div>
-          </mat-card-content>
-
-        </mat-card>
+        <div [class]="'card suit' +(item.substring(item.length-1,item.length))" *ngFor="let item of sortedList">
+          <p>{{item.substring(0,item.length-1)}} </p>
+        </div>
       </div>
     </div>
   </div>

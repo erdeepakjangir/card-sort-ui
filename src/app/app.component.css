@@ -1,36 +1,140 @@
-.header h1{
-background-color: #BAF1F6;
-text-align: center;
-padding: 12px;
+.header {
+  background-color: #5CA96D;
+  background-image: linear-gradient(90deg, #4E905D, #6BC57F);
 }
-.right-section{
+
+.header h1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #f9f9f9;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px grey;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase
+}
+
+.right-section {
   display: inline-grid;
   width: 90%;
+
 }
-.left-section{
+
+.left-section {
   overflow-y: scroll;
   height: 800px;
   display: inline-flex;
   width: 10%;
 }
+
 .card-list-section {
   margin: 10px 20px;
 }
 
 .example-card {
-    max-width: 200px;
-    background-color: bisque;
-    margin: 0px 10px;
-  }
-  .card-dropdown{
-    display: inline-grid;
-    margin:0 10px;
-  }
-  .card-selected-area{
-    display: inline-flex;
-  }
-  .card-result{
-    display: block;
-  }
-  .card-basic{ font-size: 40px; font-weight: bold; color: red;}
- 
+  max-width: 200px;
+  background-color: bisque;
+  margin: 0px 10px;
+}
+
+.card-dropdown {
+  display: inline-grid;
+  margin: 0 10px;
+}
+
+.card-selected-area {
+  display: inline-flex;
+  margin-top: 20px;
+}
+
+.card-result {
+  display: block;
+}
+
+.card-basic {
+  font-size: 40px;
+  font-weight: bold;
+  color: red;
+}
+
+.btn-sort {
+  margin-left: 20px;
+}
+
+body {
+  background: #00a651;
+}
+
+.card {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 100px;
+  height: 140px;
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.card p {
+  text-align: center;
+  font: 57px/140px Georgia, Times New Roman, serif;
+}
+
+.suitD,
+.suitH p {
+  color: #ff0000;
+  ;
+}
+
+.suitD:before,
+.suitD:after {
+  content: "♦";
+  color: #ff0000;
+}
+
+.suitH:before,
+.suitH:after {
+  content: "♥";
+  color: #ff0000;
+}
+
+.suitC:before,
+.suitC:after {
+  content: "♣";
+  color: #000;
+}
+
+.suitS:before,
+.suitS:after {
+  content: "♠";
+  color: #000;
+}
+
+.suitT:before,
+.suitT:after {
+  content: ' \265B';
+  color: olivedrab;
+}
+
+div[class*='suit']:before {
+  position: absolute;
+  font-size: 35px;
+  left: 5px;
+  top: 5px;
+}
+
+div[class*='suit']:after {
+  position: absolute;
+  font-size: 35px;
+  right: 5px;
+  bottom: 5px;
+}
+
+.header-lbl {
+  margin-top: 10px;
+}

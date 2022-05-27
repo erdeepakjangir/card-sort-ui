@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardserviceService {
-  private url = 'https://card-demo.azurewebsites.net/card/';
 
   constructor(private httpClient: HttpClient) { }
-  
-  getCardList(){
-    console.log('get call initialed');
-    return this.httpClient.get(this.url);
+
+  getCardList() {
+    console.log(environment.baseURL);
+    return this.httpClient.get(environment.baseURL + 'card');
   }
-  performSort(data:any){
-    console.log('post call initialed');
-    console.log(data);
-    return this.httpClient.post(this.url,data);
+  performSort(data: any) {
+    return this.httpClient.post(environment.baseURL + 'card', data);
   }
 }
